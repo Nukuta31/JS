@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #3978c5;
+  --accent-dark: #285e9f;
+  --accent-light: #eaf3ff;
+  --text: #263246;
+  --muted: #68758a;
+  --border: #dce5f0;
+}
+
+body {
+  margin: 0;
+  padding: 24px 14px;
+  background: #eef3f9;
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.window {
+  max-width: 680px;
+  min-height: 250px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(48, 75, 110, 0.08);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf0f6;
+}
+
+button, .tab {
+  padding: 10px 15px;
+  border: 1px solid #cdd9e8;
+  border-radius: 6px;
+  background: #f7faff;
+  color: #35445b;
+  font: inherit;
+  cursor: pointer;
+  transition: background .18s, color .18s, border-color .18s, transform .18s;
+}
+
+button:hover, .tab:hover {
+  background: var(--accent-light);
+  border-color: #9bbce7;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+button:active, .tab:active {
+  transform: translateY(1px);
+}
+
+.page {
+  display: none;
+  margin-top: 30px;
+  line-height: 1.65;
+  animation: appear .2s ease-out;
+}
+
+.page.active {
+  display: block;
+}
+
+.page p {
+  margin-top: 0;
+}
+
+input {
+  padding: 10px 12px;
+  width: min(100%, 360px);
+  border: 1px solid #cdd9e8;
+  border-radius: 6px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+#textForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+}
+
+#result {
+  margin-top: 18px;
+  overflow-wrap: anywhere;
+}
+
+#result p {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  background: #f5f8fd;
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+}
+
+#colorBox {
+  width: 150px;
+  height: 80px;
+  border: 1px solid #d5deea;
+  border-radius: 8px;
+  background: #e7edf5;
+  margin: 12px 0;
+  transition: background-color .25s;
+}
+
+#apiStatus {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 28px;
+  text-align: center;
+  color: #8591a4;
+  font-size: 12px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  body { padding: 12px 8px; }
+  .window { padding: 15px; }
+  nav { gap: 6px; }
+  button, .tab { padding: 9px 10px; font-size: 14px; }
+  .page { margin-top: 23px; }
+}

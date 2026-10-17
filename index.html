@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О себе — Никита</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="window">
+    <nav>
+      <button class="tab active" data-page="me">О себе</button>
+      <button class="tab" data-page="text">Что-нибудь</button>
+      <button class="tab" data-page="api">Пример работы с API</button>
+    </nav>
+
+    <section class="page active" id="me">
+      <p>Меня зовут Никита. Я учусь на втором курсе по специальности «Программирование», группа КИС-2419. Мне интересно создавать сайты и узнавать что-то новое в программировании.</p>
+    </section>
+
+    <section class="page" id="text">
+      <p>Напиши что-нибудь в поле ниже:</p>
+      <form id="textForm">
+        <input id="userText" type="text" placeholder="Введи текст..." required>
+        <button type="submit">ОК</button>
+      </form>
+      <div id="result"></div>
+    </section>
+
+    <section class="page" id="api">
+      <p>Нажми кнопку, чтобы получить случайный цвет через API.</p>
+      <div id="colorBox"></div>
+      <p id="colorInfo">Цвет пока не получен.</p>
+      <button id="colorButton">Получить цвет</button>
+      <p id="apiStatus"></p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
